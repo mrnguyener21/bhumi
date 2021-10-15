@@ -36,8 +36,24 @@ Note: You can return the array with its elements in any order.
 //OR i can merge them together and remove duplicates
 //is there a remove duplicate function in JS, if not I can just sort and loop through to check
 
-a = ["andesite", "grass", "dirt", "pink wool", "dead shrub"]
-b = ["diorite", "andesite", "grass", "dirt", "dead shrub"]
+// a = ["andesite", "grass", "dirt", "pink wool", "dead shrub"]
+// b = ["diorite", "andesite", "grass", "dirt", "dead shrub"]
 
-let difference = a.filter(c => !b.includes(c)).concat(b.filter(c => !a.includes(c)));
-console.log(difference)
+// let difference = a.filter(c => !b.includes(c)).concat(b.filter(c => !a.includes(c)));
+// console.log(difference)
+
+//seek and destroy
+/*
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. 
+Remove all elements from the initial array that are of the same value as these arguments.
+
+Note: You have to use the arguments object.
+*/
+function destroyer(arr) {
+    var arg = Array.from(arguments)
+    var optional = arg.slice(1)
+  
+    let answer = arr.filter(item => !optional.includes(item))
+    console.log(answer)
+    return answer
+  }
