@@ -139,3 +139,15 @@ Note: You can return the array with its elements in any order.
 
 // let difference = a.filter(c => !b.includes(c)).concat(b.filter(c => !a.includes(c)));
 // console.log(difference)
+
+// Seek and DestroyPassed
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+let destroyer = (...arr) => {
+  let range = arr[0]
+  let check = arr.splice(1,arr.length)
+  let answer = range.filter(arg => !check.includes(arg))
+  return answer
+}
+
+// Note: You have to use the arguments object.
