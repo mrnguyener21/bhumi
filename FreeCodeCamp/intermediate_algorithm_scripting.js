@@ -171,3 +171,15 @@ let destroyer = (...arr) => {
 //       return true
 //     });
 //   }
+
+// Spinal Tap Case
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+let spinalCase = (str) => {
+  //so first i would want to put a space between any lower case and capital case letters next to each other
+  //after that i would just wanna replace all spaces and under scores with a dash
+  let upperCaseIssue = str.replace(/([a-z])([A-Z])/g,'$1 $2')
+  let spaceAndUnderScore = upperCaseIssue.replace(/\s|_/g, '-').toLowerCase()
+  return spaceAndUnderScore
+}
+
+spinalCase('thisIsSpinalTap');
