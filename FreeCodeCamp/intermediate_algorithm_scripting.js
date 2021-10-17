@@ -82,3 +82,18 @@ Note: You have to use the arguments object.
 //       return true
 //     });
 //   }
+
+// Spinal Tap Case
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+function spinalCase(str) {
+    var upperCase = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+    console.log(upperCase)
+    var spaceAndDash = upperCase.replace(/\s|_/g, '-').toLowerCase();
+    console.log(spaceAndDash)
+    return spaceAndDash;
+  }
+  
+  
+  spinalCase('thisIsSpinalTap');
+
+  
