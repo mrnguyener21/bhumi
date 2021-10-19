@@ -290,14 +290,10 @@ pairElement("GCG");
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let strFirstChar = str.slice(0,1)
     let start = alphabet.slice(alphabet.indexOf(strFirstChar))
-    let answer = []
-    
+  
     for (let i=0; i < str.length; i++){
       if (str.charAt(i) !== start.charAt(i)){
-          answer.push(start.charAt(i))
-          return answer[0]
+          return start.charAt(i)
       }
     }
   }
-  
-  fearNotLetter("stvwx");
