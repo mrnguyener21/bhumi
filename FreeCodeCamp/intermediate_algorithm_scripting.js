@@ -229,3 +229,37 @@ let myReplace = (str, before, after) => {
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "Jumped", "leaped");
+
+// DNA Pairing
+// The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+// Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+
+// Return the provided character as the first element in each array.
+
+// For example, for the input GCG, return [["G", "C"], ["C","G"], ["G", "C"]]
+
+// The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+
+let pairElement = (str) => {
+  let splitStr = str.split('')
+  let answer =[]
+
+  for (let i = 0; i < splitStr.length; i++) {
+    if (splitStr[i] === 'C'){
+      answer.push(['C','G'])
+    }
+    else if(splitStr[i] === 'G'){
+      answer.push(['G','C'])
+    }
+    else if(splitStr[i] === 'T'){
+      answer.push(["T",'A'])
+    }
+    else{
+      answer.push(['A','T'])
+    }
+  }
+  return answer;
+}
+
+pairElement("GCG");
