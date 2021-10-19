@@ -263,3 +263,21 @@ let pairElement = (str) => {
 }
 
 pairElement("GCG");
+
+// Missing letters
+// Find the missing letter in the passed letter range and return it.
+
+// If all letters are present in the range, return undefined.function fearNotLetter(str) {
+  function fearNotLetter(str) {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let x = alphabet.indexOf(str[0]);
+    let y = alphabet.slice(x);
+    console.log(y)
+    for (let i =0; i < str.length; i++){
+      console.log(str[i],y[i])
+      if (str[i] != y[i]){
+        return y[i]
+      }
+    }
+  }
+  fearNotLetter("bcdf");
