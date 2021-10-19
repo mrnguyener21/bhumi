@@ -281,3 +281,23 @@ pairElement("GCG");
     }
   }
   fearNotLetter("bcdf");
+
+//   Missing letters
+// Find the missing letter in the passed letter range and return it.
+
+// If all letters are present in the range, return undefined.function fearNotLetter(str) {
+  function fearNotLetter(str) {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let strFirstChar = str.slice(0,1)
+    let start = alphabet.slice(alphabet.indexOf(strFirstChar))
+    let answer = []
+    
+    for (let i=0; i < str.length; i++){
+      if (str.charAt(i) !== start.charAt(i)){
+          answer.push(start.charAt(i))
+          return answer[0]
+      }
+    }
+  }
+  
+  fearNotLetter("stvwx");
