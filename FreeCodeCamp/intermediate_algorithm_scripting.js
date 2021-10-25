@@ -1038,15 +1038,17 @@ sentensify("May-the-force-be-with-you");
 // The range will be an array of two numbers that will not necessarily be in numerical order.
 
 // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
-
 function smallestCommons(arr) {
-  arr = arr.sort()
-  let range = []
-  for (let i = arr[0]; i <= arr[1]; i++) range.push(i)
+  let min = Math.min(...arr)
+  let max = Math.max(...arr)
+  let lcm = 1;
+
+  let lcmFormula = (a,b) => {for (let i = b; i <= a*b; i+=b) if( i%a === 0) return i}  
+
+  for (let i = min; i <= max; i++) lcm = lcmFormula(lcm,i)
   
-  console.log(range)
-  // return arr;
+  return lcm
 }
 
 
-smallestCommons([1,5]);
+smallestCommons([23,18]);
