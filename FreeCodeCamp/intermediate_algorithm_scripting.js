@@ -1094,3 +1094,17 @@ function steamrollArray(arr) {
   }
   return answer;
 }
+
+// Binary Agents
+// Return an English translated sentence of the passed binary string.
+
+// The binary string will be space separated.
+
+function binaryAgent(str) {
+  let code = str.split(' ')
+  let translated = []
+  for (let i =0; i < code.length; i++){
+  translated.push(String.fromCharCode(parseInt(code[i], 2)))
+  }
+  return translated.join('');
+}
