@@ -46,3 +46,13 @@ function rot13(str) {
 // if its 7 then we wanna loop through and make sure they are all numbers <0 to be true
 //if its 8 AND the first number is 1 then we can loop through and make sure they are all numbers <= 0 to be true
 //any length smaller than 7 or greater than 8 return false
+
+//actualy i can just use regex here since we are going to be checking for certain digits and optional symbols in a string
+function telephoneCheck(str) {
+  let regex = /^1?\s?(\d{3}|\(\d{3}\))-?\s?\d{3}-?\s?\d{4}$/gm;
+
+  return regex.test(str)
+
+}
+
+telephoneCheck("(555-555-5555");
