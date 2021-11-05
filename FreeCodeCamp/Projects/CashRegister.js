@@ -34,3 +34,50 @@
 //   ["TWENTY", 60],
 //   ["ONE HUNDRED", 100]
 // ]
+
+function checkCashRegister(price, cash, cid) {
+    let change = cash - price
+    let registerTotal = 0
+    let changeFromRegister = []
+    
+    cid.map(money => registerTotal += money[1])
+    
+    registerTotal = registerTotal.toFixed(2)
+    
+    if (registerTotal < change){
+      return {status: "INSUFFICIENT_FUNDS", change: []}
+      
+      } else if (registerTotal === change){
+        return {status: "CLOSED", change: cid}
+        
+        } else{
+          let currencyUnit = {
+            'ONE HUNDRED': 100, 
+            'TWENTY': 20,
+            'TEN': 10,
+            'FIVE': 5,
+            'ONE': 1,
+            'QUARTER': .25,
+            'DIME': .10,
+            'NICKEL':.05,
+            'PENNY': .01,
+          };
+  
+          cid = cid.reverse()
+          
+          cid.map( element => {
+              let counter = 0;
+            while (change >= currencyUnit[element[0]] & element[1] >= currencyUnit[element[0]]){
+              // console.log(element[1],currencyUnit[element[0]])
+              change -= currencyUnit[element[0]];
+              element[1] -= currencyUnit[element[0]];
+              counter += currencyUnit[element[0]]
+              // console.log(counter)
+            }
+              // console.log(counter)
+            if (counter != 0) changeFromRegister.push([element[0],counter])
+          })
+          console.log(changeFromRegister)
+      }
+      return {status: "OPEN", change: changeFromRegister}
+    }
